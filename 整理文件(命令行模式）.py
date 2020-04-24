@@ -16,11 +16,11 @@ for i in e:
     allList.append('.'.join(r))
     name = '.'.join(r)
     try:
-        mkdir(path+r[-1])
+        mkdir(path+'.'+r[-1])
     except:
         try:
-            move(path+name, path+r[-1])
+            move(path+name, path+'.'+r[-1])
         except FileExistsError:
-            move(path+'('+str(time()*100000)+')'+name, path+r[-1])
+            move(path+'('+str(time()*100000)+')'+name, path+'.'+r[-1])
         continue
-    move(path+name, path+r[-1])
+    move(path+name, path+'.'+r[-1])
